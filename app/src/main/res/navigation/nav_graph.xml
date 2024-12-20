@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mirshad.myapp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewNoteFragment"
+            app:destination="@id/viewNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchNoteFragment"
+            app:destination="@id/searchNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.mirshad.myapp.ui.NewNoteFragment"
+        android:label="fragment_new_note"
+        tools:layout="@layout/fragment_new_note" >
+        <action
+            android:id="@+id/action_newNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchNoteFragment"
+        android:name="com.mirshad.myapp.ui.SearchNoteFragment"
+        android:label="fragment_search_note"
+        tools:layout="@layout/fragment_search_note" >
+        <action
+            android:id="@+id/action_searchNoteFragment_to_viewNoteFragment"
+            app:destination="@id/viewNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNoteFragment"
+        android:name="com.mirshad.myapp.ui.EditNoteFragment"
+        android:label="fragment_edit_note"
+        tools:layout="@layout/fragment_edit_note" >
+        <action
+            android:id="@+id/action_editNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editNoteFragment_to_viewNoteFragment"
+            app:destination="@id/viewNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewNoteFragment"
+        android:name="com.mirshad.myapp.ui.ViewNoteFragment"
+        android:label="fragment_view_note"
+        tools:layout="@layout/fragment_view_note" >
+        <action
+            android:id="@+id/action_viewNoteFragment_to_editNoteFragment"
+            app:destination="@id/editNoteFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_viewNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
